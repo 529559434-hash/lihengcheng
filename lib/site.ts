@@ -20,6 +20,7 @@ export const site = {
   phone: "+86 136-8642-3827",
   email: "529559434@qq.com",
   url: "https://www.lihengcheng.com",
+  avatar: "/avatar.jpg",
   socials: {
     github: "https://github.com/your-handle",
     linkedin: "https://www.linkedin.com/in/your-handle",

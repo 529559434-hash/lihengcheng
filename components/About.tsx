@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Section } from "./Section";
 import { Reveal } from "./Reveal";
@@ -9,16 +10,29 @@ export function About() {
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr] md:gap-14">
         <Reveal className="order-1 md:order-none">
           <div className="surface relative mx-auto flex aspect-square w-full max-w-[260px] items-center justify-center overflow-hidden">
+            {site.avatar ? (
+              <Image
+                src={site.avatar}
+                alt={`${site.name} 头像`}
+                fill
+                sizes="260px"
+                priority
+                className="object-cover"
+              />
+            ) : (
+              <>
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-grad-brand opacity-25"
+                />
+                <div className="relative flex h-full w-full items-center justify-center text-7xl font-semibold tracking-tight text-white/90">
+                  {site.name.slice(-1)}
+                </div>
+              </>
+            )}
             <div
               aria-hidden
-              className="absolute inset-0 bg-grad-brand opacity-25"
-            />
-            <div className="relative flex h-full w-full items-center justify-center text-7xl font-semibold tracking-tight text-white/90">
-              {site.name.slice(-1)}
-            </div>
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,0.18),transparent_60%)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)]"
             />
           </div>
         </Reveal>
