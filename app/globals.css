@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    background-color: #0a0a0a;
+    color: rgba(255, 255, 255, 0.92);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-image:
+      radial-gradient(
+        80% 50% at 50% 0%,
+        rgba(99, 102, 241, 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        50% 40% at 100% 20%,
+        rgba(34, 211, 238, 0.10),
+        transparent 70%
+      );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.35);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-grad-text bg-clip-text text-transparent;
+  }
+
+  .gradient-brand-text {
+    @apply bg-grad-brand bg-clip-text text-transparent;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/70;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-white/80 transition-all duration-200 hover:border-white/25 hover:bg-white/[0.06] hover:text-white hover:-translate-y-0.5;
+  }
+}
